@@ -1,0 +1,121 @@
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.9;
+}
+
+header {
+    background-color: #7c44bd;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Formulario */
+form {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin: 10px 0;
+    width: 80%;
+    max-width: 400px;
+    border: 1px solid #b37ae9;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #b37ae9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #6545a0;
+}
+
+/* Contador de tareas */
+#task-counts {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#pending-count, #completed-count {
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+/* Listas de tareas */
+#tasks-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+#pending-tasks, #completed-tasks {
+    width: 45%;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    background-color: #5c14a07e;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #a836f4;
+}
+
+/* Tareas completadas */
+.completed {
+    background-color: #d3ffd3;
+    text-decoration: line-through;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+li {
+    animation: fadeIn 0.5s ease-out;
+}

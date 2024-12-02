@@ -1,11 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de tareas</title>
+    <title>Simulador de Tareas</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <script src="./main.js"></script>
+    <header>
+        <h1>Simulador de Tareas</h1>
+    </header>
+    <main>
+        <section id="task-manager">
+            <h2>Organiza tus tareas</h2>
+            <form id="task-form" role="form">
+                <label for="task-input">Nueva tarea:</label>
+                <input type="text" id="task-input" placeholder="Escribe una nueva tarea" required aria-labelledby="task-input">
+                <button type="submit" aria-label="Agregar tarea">Agregar</button>
+            </form>
+
+            <!-- Contadores de tareas -->
+            <div id="task-counts">
+                <p id="pending-count">Tareas pendientes: 0</p>
+                <p id="completed-count">Tareas completadas: 0</p>
+            </div>
+
+            <div id="tasks-container">
+                <div id="pending-tasks">
+                    <h3>Tareas Pendientes</h3>
+                    <ul id="pending-list"></ul>
+                </div>
+                <div id="completed-tasks">
+                    <h3>Tareas Completadas</h3>
+                    <ul id="completed-list"></ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/storage.js" type="module"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
