@@ -1,4 +1,4 @@
-/* Estilos generales */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -19,7 +19,7 @@ header {
     padding: 10px 0;
 }
 
-/* Formulario */
+
 form {
     margin: 20px;
     display: flex;
@@ -100,13 +100,13 @@ button:hover {
     background-color: #a836f4;
 }
 
-/* Tareas completadas */
+
 .completed {
     background-color: #d3ffd3;
     text-decoration: line-through;
 }
 
-/* Animaciones */
+
 @keyframes fadeIn {
     from {
         opacity: 0;

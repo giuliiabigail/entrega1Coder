@@ -1,4 +1,4 @@
-// Tareas almacenadas
+
 let tareas = JSON.parse(localStorage.getItem("tareas")) || [];
 
 // Elementos del DOM
@@ -9,13 +9,13 @@ const completedList = document.getElementById("completed-list");
 const pendingCount = document.getElementById("pending-count");
 const completedCount = document.getElementById("completed-count");
 
-// Guardar tareas en LocalStorage
+
 const saveTasks = () => {
     localStorage.setItem("tareas", JSON.stringify(tareas));
     updateTaskCounts(); // Actualizamos los contadores
 };
 
-// Actualizar contadores
+
 const updateTaskCounts = () => {
     const tareasPendientes = tareas.filter(tarea => !tarea.completada).length;
     const tareasCompletadas = tareas.filter(tarea => tarea.completada).length;
@@ -24,13 +24,12 @@ const updateTaskCounts = () => {
     completedCount.textContent = `Tareas completadas: ${tareasCompletadas}`;
 };
 
-// Renderizar tareas
+
 const verTareas = () => {
-    // Limpiar listas
     pendingList.innerHTML = "";
     completedList.innerHTML = "";
 
-    // Tareas pendientes
+
     const pendientes = tareas.filter(tarea => !tarea.completada);
     if (pendientes.length === 0) {
         pendingList.innerHTML = "<p>No hay tareas pendientes.</p>";
@@ -48,7 +47,7 @@ const verTareas = () => {
         });
     }
 
-    // Tareas completadas
+
     const completadas = tareas.filter(tarea => tarea.completada);
     if (completadas.length === 0) {
         completedList.innerHTML = "<p>No hay tareas completadas.</p>";
@@ -68,7 +67,7 @@ const verTareas = () => {
     }
 };
 
-// Agregar tarea
+
 const agregarTarea = (nuevaTarea) => {
     if (nuevaTarea) {
         tareas.push({ nombre: nuevaTarea, completada: false });
@@ -77,7 +76,7 @@ const agregarTarea = (nuevaTarea) => {
     }
 };
 
-// Marcar tarea como completada
+
 const marcarTareaCompletada = (index) => {
     if (tareas[index]) {
         tareas[index].completada = true;
@@ -86,7 +85,7 @@ const marcarTareaCompletada = (index) => {
     }
 };
 
-// Marcar tarea como pendiente
+
 const marcarTareaPendiente = (index) => {
     if (tareas[index]) {
         tareas[index].completada = false;
@@ -95,7 +94,6 @@ const marcarTareaPendiente = (index) => {
     }
 };
 
-// Eliminar tarea
 const eliminarTarea = (index) => {
     if (tareas[index]) {
         tareas.splice(index, 1);
@@ -104,7 +102,7 @@ const eliminarTarea = (index) => {
     }
 };
 
-// Evento para el formulario
+
 taskForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const nuevaTarea = taskInput.value.trim();
@@ -112,6 +110,6 @@ taskForm.addEventListener("submit", (e) => {
     taskInput.value = ""; // Limpiar el input
 });
 
-// Mostrar tareas al cargar la página
+
 verTareas();
 ``
